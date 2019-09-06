@@ -1,0 +1,92 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset='UTF-8')
+        title Title
+        link(rel='stylesheet' href='css/style.css')
+    body
+        div.page
+            div.header
+                case data.preview_images
+                    when null
+                        img.avatar(src='https://www.w3schools.com/howto/img_avatar.png')
+                    default
+                        case data.preview_images.length
+                            when 0
+                                img.avatar(src='https://www.w3schools.com/howto/img_avatar.png')
+                            default
+                                img.avatar(src=data.preview_images[0])
+                h3.title.full-name #{data.first_name} #{data.last_name}
+                div.contacts
+                    div.contacts-row
+                        case data.phone
+                            when null
+                                break
+                            default
+                                span.phone-number #{data.phone}
+                                span #{' - '}
+                        case data.email
+                            when null
+                                break
+                            default
+                                span.email-address #{data.email}
+                    div.contacts-row
+                        case data.address
+                            when null
+                                break
+                            default
+                                span.address #{data.address}
+                        case data.city
+                            when null
+                                break
+                            default
+                                span.address #{' ' + data.city}
+                        case data.country
+                            when null
+                                break
+                            default
+                                span.address #{' ' + data.country}
+                        case data.postal_code
+                            when null
+                                break
+                            default
+                                span.address #{' ' + data.postal_code}
+            div.body
+                table
+                    tbody
+                        td.leftSide.sub-heading PROFILE
+                        td.rightSide Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis consectetur impedit minus porro quae quas qui quo repellat similique, sunt!
+                table
+                    caption.sub-heading Experiance
+                    tbody
+                        tr
+                            td.leftSide
+                                h2 International Company
+                                span 2014>Current
+                            td.rightSide
+                                h2 Expert Sales
+                                span Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore, voluptas!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate dolorem est obcaecati vitae? Atque in, incidunt ipsam nihil quis repudiandae vel! Aliquid delectus doloribus ea expedita molestiae repellendus sequi tempore?
+                        tr
+                            td.leftSide
+                                h2 Company Name
+                                span 2009>2014
+                            td.rightSide
+                                h2 Sales Manager
+                                span Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam fuga possimus reiciendis, soluta veniam voluptate.
+                        tr
+                            td.leftSide
+                                h2 Company Name
+                                span 2007>2009
+                            td.rightSide
+                                h2 Sales Preson
+                                span Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus enim eveniet fuga, magni minus praesentium quas repudiandae totam voluptatibus! Fugiat molestiae perferendis quas vel velit.
+                table
+                    caption.sub-heading Experiance
+                    tbody
+                        tr
+                            td.leftSide
+                                h2 Hight school
+                                span
+                            td.rightSide
+                                h2 Backhelore of Marketing
+                                span Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, mollitia, quisquam. Dignissimos dolor dolorum laboriosam maiores nesciunt numquam omnis?
