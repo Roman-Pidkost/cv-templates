@@ -115,19 +115,16 @@ html(lang='en')
                                                     span #{edu.description}
                 case !!data.skills && !!data.skills.length > 0
                     when true
-                        table.languages
+                        table.skills
                             tbody
                                 tr
                                     td.sub-heading.sub-heading-inline SKILLS
                                     td.inline-table-container
-                                        table.full-width-table
-                                            tbody
-                                                tr
-                                                    td
-                                                        each skill in data.skills
-                                                            case !!skill.label
-                                                                when true
-                                                                    span.languages-item #{skill.label}
+                                        div.full-width-table.skills-container
+                                            each skill in data.skills
+                                                case !!skill.label
+                                                    when true
+                                                        div.skills-item #{skill.label}
                 case !!data.languages && !!data.languages.length > 0
                     when true
                         table.languages

@@ -124,4 +124,12 @@ caption{
     content: '';
 }
 
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
 
+.skills-item {
+    width: 48%;
+}
