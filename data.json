@@ -60,6 +60,18 @@
       "label": "English",
       "level": "Advanced",
       "position": 0
+    },
+    {
+      "id": "87289888-6535-49cd-9c88-2cd872c5868a",
+      "label": "English",
+      "level": "Advanced",
+      "position": 0
+    },
+    {
+      "id": "87289888-6535-49cd-9c88-2cd872c5868a",
+      "label": "English",
+      "level": "Advanced",
+      "position": 0
     }
   ],
   "last_name": "Murugavel",
@@ -98,6 +110,15 @@
       "phone": "0902001010",
       "position": 0,
       "referrer": "some"
+    },
+    {
+      "company": "Some",
+      "designation": "Some",
+      "email": "Some@mail.com",
+      "id": "82fc8a01-d3d2-42e2-93d6-95c7d67c1858",
+      "phone": "0902001010",
+      "position": 0,
+      "referrer": "some"
     }
   ],
   "sections": [
@@ -113,6 +134,35 @@
   ],
   "skills": [
     {
+      "id": "e32a4a59-93a7-4b79-bf9b-6d70700d1f1a",
+      "label": "uuuu",
+      "level": null,
+      "position": 1
+    },
+    {
+      "id": "503f77cd-4b82-47a9-910b-a313586d945f",
+      "label": "asdasdasdasdasd",
+      "level": null,
+      "position": 0
+    },
+    {
+      "id": "fbc269ed-34bf-4725-82f6-5f8781160ed4",
+      "label": "yahoo",
+      "level": null,
+      "position": 2
+    },
+    {
+      "id": "c192e286-768f-4d04-b431-d560c1b633df",
+      "label": "git",
+      "level": null,
+      "position": 3
+    },
+    {
+      "id": "3e27fcb4-7771-4c3e-84c9-1dccd4408038",
+      "label": "docker",
+      "level": null,
+      "position": 4
+    },{
       "id": "e32a4a59-93a7-4b79-bf9b-6d70700d1f1a",
       "label": "uuuu",
       "level": null,

@@ -47,6 +47,7 @@
     font-weight: normal;
     margin-left: -3px;
 }
+
 table{
     text-align: left;
     display: flex;
@@ -65,12 +66,34 @@ h2{
 caption{
     margin-bottom: 1%;
 }
-.leftSide{
-    width: 30%;
+.leftSide, .sub-heading-inline {
+    width: 35%;
 }
-.rightSide{
-    width: 70%;
+.rightSide, .inline-table-container {
+    width: 65%;
 }
+
+.sub-heading-inline {
+    padding-right: 0;
+}
+
+.inline-table-container {
+    padding-top: 8px;
+}
+
+.full-width-table {
+    width: 100%;
+}
+
+.sub-table-left {
+    width: 40%;
+}
+
+.sub-table-right {
+    width: 58%;
+    margin-left: 2%;
+}
+
 
 .courses tr {
     margin-bottom: 3%;
@@ -84,5 +107,21 @@ caption{
     margin-bottom: 5%;
 }
 
+.languages-item {
+    font-size: 12px;
+    padding-right: 10px;
+    position: relative;
+    display: inline-block;
+}
+
+.languages-item:after {
+    content: ' | ';
+    color: #798291;
+    position: absolute;
+    right: 4px;
+}
+.languages-item:last-child:after {
+    content: '';
+}
 
 

@@ -98,11 +98,7 @@ html(lang='en')
                     div.section_header LANGUAGES
                     div.skills
                         each lan in data.languages
-                            div
-                                span.skills__item #{lan.label}
-                                case !!lan.level
-                                    when true
-                                        span #{' - ' + lan.level}
+                            span.skills__item #{lan.label}
             case !!data.courses && !!data.courses.length > 0
                 when true
                     div.section_header COURSES
@@ -137,8 +133,7 @@ html(lang='en')
                         div.work
                             case !!ref.company
                                 when true
-                                    div.work__employer #{ref.company}
+                                    div.work__employer #{ref.company} #{(ref.designation || '')}
                             case !!ref.designation || !!ref.email || !!ref.phone || !!ref.referrer
                                 when true
-                                    div.work__descriptiono #{(ref.designation || '')}
                                     div.work__descriptiono #{(ref.email || '') + ' ' + (ref.phone || '') + (ref.email || ref.phone ? ' - ' : '') + (ref.referrer || '')}
