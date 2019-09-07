@@ -103,6 +103,18 @@ html(lang='en')
                                 case !!lan.level
                                     when true
                                         span #{' - ' + lan.level}
+            case !!data.courses && !!data.courses.length > 0
+                when true
+                    div.section_header COURSES
+                    div.courses__container
+                        each course in data.courses
+                            div.courses__item
+                                div.courses__item_title #{course.course}
+                                div.courses__item_about #{course.associated_with}
+
+
+
+
             case !!data.honors && !!data.honors.length > 0
                 when true
                     div.section_header HONORS
@@ -133,4 +145,3 @@ html(lang='en')
                             case !!ref.designation || !!ref.email || !!ref.phone || !!ref.referrer
                                 when true
                                     div.work__descriptiono #{(ref.designation || '') + ' ' + (ref.email || '') + ' ' + (ref.phone || '') + ' ' + (ref.referrer || '')}
-

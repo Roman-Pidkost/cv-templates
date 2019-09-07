@@ -85,3 +85,16 @@
 .work__info span {
     color: #888;
 }
+
+.courses__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 8px 0 16px;
+}
+
+.courses__item {
+    width: 48%;
+    padding: 6px 0;
+}
+

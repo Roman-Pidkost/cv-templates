@@ -4,16 +4,16 @@
   "country": "",
   "courses": [
     {
-      "associated_with": null,
-      "course": null,
+      "associated_with": "learning",
+      "course": "Some very good course",
       "id": "fb363658-d471-4a3c-a544-fe2403f88b0e",
       "position": 0
     },
     {
-      "associated_with": null,
-      "course": null,
-      "id": "f17d77a8-58bb-4ac6-8b55-a5b3aee8fd16",
-      "position": 1
+      "associated_with": "learning",
+      "course": "Some very good course",
+      "id": "fb363658-d471-4a3c-a544-fe2403f88b0e",
+      "position": 0
     }
   ],
   "professional summary" : "lorem ipsum",
