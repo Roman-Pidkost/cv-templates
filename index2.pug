@@ -111,10 +111,6 @@ html(lang='en')
                             div.courses__item
                                 div.courses__item_title #{course.course}
                                 div.courses__item_about #{course.associated_with}
-
-
-
-
             case !!data.honors && !!data.honors.length > 0
                 when true
                     div.section_header HONORS
@@ -144,4 +140,5 @@ html(lang='en')
                                     div.work__employer #{ref.company}
                             case !!ref.designation || !!ref.email || !!ref.phone || !!ref.referrer
                                 when true
-                                    div.work__descriptiono #{(ref.designation || '') + ' ' + (ref.email || '') + ' ' + (ref.phone || '') + ' ' + (ref.referrer || '')}
+                                    div.work__descriptiono #{(ref.designation || '')}
+                                    div.work__descriptiono #{(ref.email || '') + ' ' + (ref.phone || '') + (ref.email || ref.phone ? ' - ' : '') + (ref.referrer || '')}

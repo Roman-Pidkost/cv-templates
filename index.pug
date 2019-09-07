@@ -51,6 +51,11 @@ html(lang='en')
                         case !!data.postal_code
                             when true
                                 span.address #{data.postal_code}
+                div.links-row
+                    each link in data.links
+                        case !!link.label
+                            when true
+                                a.text.links-item(href=link.link) #{link.label}
             div.body
                 case !!data['professional summary']
                     when true
@@ -58,7 +63,7 @@ html(lang='en')
                             tbody
                                 td.leftSide.sub-heading PROFILE
                                 td.rightSide #{data['professional summary']}
-                case !!data.works && !!data.works.length
+                case !!data.works && !!data.works.length > 0
                     when true
                         table
                             thead
@@ -83,7 +88,7 @@ html(lang='en')
                                             case !!work.description
                                                 when true
                                                     span #{work.description}
-                case !!data.educations && !!data.educations.length
+                case !!data.educations && !!data.educations.length > 0
                     when true
                         table
                             thead
@@ -108,3 +113,100 @@ html(lang='en')
                                             case !!edu.description
                                                 when true
                                                     span #{edu.description}
+                case !!data.skills && !!data.skills.length > 0
+                    when true
+                        table.skills
+                            thead
+                                th.sub-heading SKILLS
+                            body
+                                tr
+                                    td.leftSide
+                                    td.rightSide
+                                        each skill in data.skills
+                                            case !!skill.label || !!skill.level
+                                                when true
+                                                    div #{(skill.label || '') + (skill.label && skill.level ? ' - ' : '') + (skill.level || '')}
+                case !!data.languages && !!data.languages.length > 0
+                    when true
+                        table.languages
+                            thead
+                                th.sub-heading LANGUAGES
+                            tbody
+                                each lan in data.languages
+                                    case !!lan.label || !!lan.level
+                                        when true
+                                            tr
+                                                td.leftSide
+                                                    case !!lan.label
+                                                        when true
+                                                            h2 #{lan.label}
+                                                td.rightSide
+                                                    case !!lan.level
+                                                        when true
+                                                            span #{lan.level}
+                case !!data.courses && !!data.courses.length > 0
+                    when true
+                        table.courses
+                            thead
+                                th.sub-heading COURSES
+                            tbody
+                                each course in data.courses
+                                    case !!course.course || !!course.associated_with
+                                        when true
+                                            tr
+                                                td.leftSide
+                                                    case !!course.course
+                                                        when true
+                                                            h2 #{course.course}
+                                                td.rightSide
+                                                    case !!course.course
+                                                        when true
+                                                            span #{course.associated_with}
+
+                case !!data.courses && !!data.courses.length > 0
+                    when true
+                        table.honors
+                            thead
+                                th.sub-heading HONORS
+                            tbody
+                                each honor in data.honors
+                                    tr
+                                        td.leftSide
+                                            case !!honor.company
+                                                when true
+                                                    h2 #{honor.company}
+                                                    span #{honor.date}
+                                        td.rightSide
+                                            case !!honor.title
+                                                when true
+                                                    h2 #{honor.title}
+                                            case !!honor.email
+                                                when true
+                                                    span #{honor.email}
+                case !!data.references && !!data.references.length > 0
+                    when true
+                        table.references
+                            thead
+                                th.sub-heading REFERENCES
+                            tbody
+                                each ref in data.references
+                                    case !!ref.company || !!ref.designation || !!ref.email || !!ref.phone || !!ref.referrer
+                                        when true
+                                            tr
+                                                td.leftSide
+                                                    case !!ref.company
+                                                        when true
+                                                            h2 #{ref.company}
+                                                    div #{ref.designation || ''}
+                                                td.rightSide
+                                                    case !!ref.email
+                                                        when true
+                                                            div #{ref.email}
+                                                    case !!ref.phone
+                                                        when true
+                                                            div #{ref.phone}
+                                                    case !!ref.referrer
+                                                        when true
+                                                            div #{ref.referrer}
+
+

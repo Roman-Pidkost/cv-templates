@@ -14,6 +14,27 @@
 .full-name {
     margin: .3cm 0;
 }
+
+.links-row{
+    margin-top: 5px;
+}
+.links-item {
+    display: inline-block;
+    position: relative;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.links-item:after {
+    content: ' | ';
+    position: absolute;
+    right: 0;
+}
+
+.links-item:last-child:after {
+    content: '';
+}
+
 /*changes by yura*/
 .contacts-row{
     padding: 5px;
@@ -46,10 +67,22 @@ caption{
 }
 .leftSide{
     width: 30%;
-    min-height: 70px;
 }
 .rightSide{
     width: 70%;
-    min-height: 70px;
 }
+
+.courses tr {
+    margin-bottom: 3%;
+}
+
+.languages tr {
+    margin-bottom: 1%;
+}
+
+.courses tr:last-child, .languages tr:last-child, .references tr:last-child {
+    margin-bottom: 5%;
+}
+
+
 
