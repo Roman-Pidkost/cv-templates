@@ -46,9 +46,9 @@
   ],
   "honors": [
     {
-      "company": null,
-      "date": null,
-      "email": null,
+      "company": "Company",
+      "date": "2015",
+      "email": "email@ads.com",
       "id": "b5d28611-4b4b-4a55-b01d-2abc6a5ccb26",
       "position": 0,
       "title": null
@@ -57,8 +57,8 @@
   "languages": [
     {
       "id": "87289888-6535-49cd-9c88-2cd872c5868a",
-      "label": null,
-      "level": null,
+      "label": "English",
+      "level": "Advanced",
       "position": 0
     }
   ],
@@ -91,13 +91,13 @@
   ],
   "references": [
     {
-      "company": null,
-      "designation": null,
-      "email": null,
+      "company": "Some",
+      "designation": "Some",
+      "email": "Some@mail.com",
       "id": "82fc8a01-d3d2-42e2-93d6-95c7d67c1858",
-      "phone": null,
+      "phone": "0902001010",
       "position": 0,
-      "referrer": null
+      "referrer": "some"
     }
   ],
   "sections": [

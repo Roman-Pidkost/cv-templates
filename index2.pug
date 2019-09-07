@@ -30,11 +30,21 @@ html(lang='en')
                                                 path(d='M13.372,1.781H6.628c-0.696,0-1.265,0.569-1.265,1.265v13.91c0,0.695,0.569,1.265,1.265,1.265h6.744c0.695,0,1.265-0.569,1.265-1.265V3.045C14.637,2.35,14.067,1.781,13.372,1.781 M13.794,16.955c0,0.228-0.194,0.421-0.422,0.421H6.628c-0.228,0-0.421-0.193-0.421-0.421v-0.843h7.587V16.955z M13.794,15.269H6.207V4.731h7.587V15.269z M13.794,3.888H6.207V3.045c0-0.228,0.194-0.421,0.421-0.421h6.744c0.228,0,0.422,0.194,0.422,0.421V3.888z')
                             case !!data.address || !!data.city || !!data.country
                                 when true
-                                    tr.header__contacts_item.header__contacts_address
+                                    tr.header__contacts_item
                                         td #{(data.address || '') + (data.address && data.city ? ', ' : '') + (data.city || '') + (data.country && data.city || data.address && data.country && !data.city ? ', ' : '') + (data.country || '')}
                                         td.header__contacts_icon
                                             svg.svg-icon(viewBox='0 0 20 20')
                                                 path(d='M10,1.375c-3.17,0-5.75,2.548-5.75,5.682c0,6.685,5.259,11.276,5.483,11.469c0.152,0.132,0.382,0.132,0.534,0c0.224-0.193,5.481-4.784,5.483-11.469C15.75,3.923,13.171,1.375,10,1.375 M10,17.653c-1.064-1.024-4.929-5.127-4.929-10.596c0-2.68,2.212-4.861,4.929-4.861s4.929,2.181,4.929,4.861C14.927,12.518,11.063,16.627,10,17.653 M10,3.839c-1.815,0-3.286,1.47-3.286,3.286s1.47,3.286,3.286,3.286s3.286-1.47,3.286-3.286S11.815,3.839,10,3.839 M10,9.589c-1.359,0-2.464-1.105-2.464-2.464S8.641,4.661,10,4.661s2.464,1.105,2.464,2.464S11.359,9.589,10,9.589')
+                            case !!data.links && !!data.links.length > 0
+                                when true
+                                    each link in data.links
+                                        tr.header__contacts_item
+                                            td
+                                                a(href=link.link) #{link.label}
+                                            td.header__contacts_icon
+                                                svg.svg-icon(viewBox='0 0 20 20')
+                                                    path(fill='none', d='M16.198,10.896c-0.252,0-0.455,0.203-0.455,0.455v2.396c0,0.626-0.511,1.137-1.138,1.137H5.117c-0.627,0-1.138-0.511-1.138-1.137V7.852c0-0.626,0.511-1.137,1.138-1.137h5.315c0.252,0,0.456-0.203,0.456-0.455c0-0.251-0.204-0.455-0.456-0.455H5.117c-1.129,0-2.049,0.918-2.049,2.047v5.894c0,1.129,0.92,2.048,2.049,2.048h9.488c1.129,0,2.048-0.919,2.048-2.048v-2.396C16.653,11.099,16.45,10.896,16.198,10.896z')
+                                                    path(fill='none', d='M14.053,4.279c-0.207-0.135-0.492-0.079-0.63,0.133c-0.137,0.211-0.077,0.493,0.134,0.63l1.65,1.073c-4.115,0.62-5.705,4.891-5.774,5.082c-0.084,0.236,0.038,0.495,0.274,0.581c0.052,0.019,0.103,0.027,0.154,0.027c0.186,0,0.361-0.115,0.429-0.301c0.014-0.042,1.538-4.023,5.238-4.482l-1.172,1.799c-0.137,0.21-0.077,0.492,0.134,0.629c0.076,0.05,0.163,0.074,0.248,0.074c0.148,0,0.294-0.073,0.382-0.207l1.738-2.671c0.066-0.101,0.09-0.224,0.064-0.343c-0.025-0.118-0.096-0.221-0.197-0.287L14.053,4.279z')
             case !!data.skills && !!data.skills.length > 0
                 when true
                     div.section_header SKILLS
@@ -83,6 +93,16 @@ html(lang='en')
                             case !!edu.description
                                 when true
                                     div.work__descriptiono #{edu.description}
+            case !!data.skills && !!data.skills.length > 0
+                when true
+                    div.section_header LANGUAGES
+                    div.skills
+                        each lan in data.languages
+                            div
+                                span.skills__item #{lan.label}
+                                case !!lan.level
+                                    when true
+                                        span #{' - ' + lan.level}
             case !!data.honors && !!data.honors.length > 0
                 when true
                     div.section_header HONORS
@@ -109,15 +129,8 @@ html(lang='en')
                         div.work
                             case !!ref.company
                                 when true
-                                    div.work__title #{ref.company}
+                                    div.work__employer #{ref.company}
                             case !!ref.designation || !!ref.email || !!ref.phone || !!ref.referrer
                                 when true
-                                    div.work__employer #{(ref.designation || ' ') + (ref.email || ' ') + (ref.phone || ' ') + (ref.referrer || ' ')}
-            case !!data.links && !!data.links.length > 0
-                when true
-                    div.section_header LINKS
-                    each link in data.links
-                        div.work
-                            case !!link.label || !!link.link
-                                when true
-                                    a.work__employer(href=link.link) #{link.label}
+                                    div.work__descriptiono #{(ref.designation || '') + ' ' + (ref.email || '') + ' ' + (ref.phone || '') + ' ' + (ref.referrer || '')}
+
