@@ -83,3 +83,41 @@ html(lang='en')
                             case !!edu.description
                                 when true
                                     div.work__descriptiono #{edu.description}
+            case !!data.honors && !!data.honors.length > 0
+                when true
+                    div.section_header HONORS
+                    each honor in data.honors
+                        div.work
+                            case !!honor.title
+                                when true
+                                    div.work__title #{honor.title}
+                            case !!honor.company
+                                when true
+                                    div.work__employer #{honor.company}
+                            case !!honor.date
+                                when true
+                                    div.work__info
+                                        div
+                                            span #{honor.date}
+                            case !!honor.email
+                                when true
+                                    div.work__descriptiono #{honor.email}
+            case !!data.courses && !!data.courses.length > 0
+                when true
+                    div.section_header REFERENCES
+                    each ref in data.references
+                        div.work
+                            case !!ref.company
+                                when true
+                                    div.work__title #{ref.company}
+                            case !!ref.designation || !!ref.email || !!ref.phone || !!ref.referrer
+                                when true
+                                    div.work__employer #{(ref.designation || ' ') + (ref.email || ' ') + (ref.phone || ' ') + (ref.referrer || ' ')}
+            case !!data.links && !!data.links.length > 0
+                when true
+                    div.section_header LINKS
+                    each link in data.links
+                        div.work
+                            case !!link.label || !!link.link
+                                when true
+                                    a.work__employer(href=link.link) #{link.label}
