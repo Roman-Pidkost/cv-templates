@@ -19,74 +19,91 @@ html(lang='en')
                 h3.title.full-name #{data.first_name} #{data.last_name}
                 div.contacts
                     div.contacts-row
-                        case data.phone
-                            when null
-                                break
-                            default
+                        case !!data.phone
+                            when true
                                 span.phone-number #{data.phone}
+                        case !!data.phone && !!data.email
+                            when true
                                 span #{' - '}
-                        case data.email
-                            when null
-                                break
-                            default
+                        case !!data.email
+                            when true
                                 span.email-address #{data.email}
                     div.contacts-row
-                        case data.address
-                            when null
-                                break
-                            default
+                        case !!data.address
+                            when true
                                 span.address #{data.address}
-                        case data.city
-                            when null
-                                break
-                            default
-                                span.address #{' ' + data.city}
-                        case data.country
-                            when null
-                                break
-                            default
-                                span.address #{' ' + data.country}
-                        case data.postal_code
-                            when null
-                                break
-                            default
-                                span.address #{' ' + data.postal_code}
+                        case !!data.city && !!data.address
+                            when true
+                                span #{', '}
+                        case !!data.city
+                            when true
+                                span.address #{data.city}
+                        case !!data.city && !!data.country
+                            when true
+                                span #{', '}
+                        case !!data.country
+                            when true
+                                span.address #{data.country}
+                        case !!data.country && !!data.postal_code
+                            when true
+                                span #{', '}
+                        case !!data.postal_code
+                            when true
+                                span.address #{data.postal_code}
             div.body
-                table
-                    tbody
-                        td.leftSide.sub-heading PROFILE
-                        td.rightSide Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis consectetur impedit minus porro quae quas qui quo repellat similique, sunt!
-                table
-                    caption.sub-heading Experiance
-                    tbody
-                        tr
-                            td.leftSide
-                                h2 International Company
-                                span 2014>Current
-                            td.rightSide
-                                h2 Expert Sales
-                                span Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore, voluptas!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate dolorem est obcaecati vitae? Atque in, incidunt ipsam nihil quis repudiandae vel! Aliquid delectus doloribus ea expedita molestiae repellendus sequi tempore?
-                        tr
-                            td.leftSide
-                                h2 Company Name
-                                span 2009>2014
-                            td.rightSide
-                                h2 Sales Manager
-                                span Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam fuga possimus reiciendis, soluta veniam voluptate.
-                        tr
-                            td.leftSide
-                                h2 Company Name
-                                span 2007>2009
-                            td.rightSide
-                                h2 Sales Preson
-                                span Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus enim eveniet fuga, magni minus praesentium quas repudiandae totam voluptatibus! Fugiat molestiae perferendis quas vel velit.
-                table
-                    caption.sub-heading Experiance
-                    tbody
-                        tr
-                            td.leftSide
-                                h2 Hight school
-                                span
-                            td.rightSide
-                                h2 Backhelore of Marketing
-                                span Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, mollitia, quisquam. Dignissimos dolor dolorum laboriosam maiores nesciunt numquam omnis?
+                case !!data['professional summary']
+                    when true
+                        table
+                            tbody
+                                td.leftSide.sub-heading PROFILE
+                                td.rightSide #{data['professional summary']}
+                case !!data.works && !!data.works.length
+                    when true
+                        table
+                            thead
+                                th.sub-heading EXPERIENCE
+                            tbody
+                                each work in data.works
+                                    tr
+                                        td.leftSide
+                                            case !!work.employer || !!work.city
+                                                when true
+                                                    h2 #{(work.employer || '') + (work.employer && work.city ? ', ' : '') + (work.city || '')}
+                                            case !!work.start_date
+                                                when true
+                                                    span #{work.start_date}
+                                            case !!work.start_date
+                                                when true
+                                                    span #{' > ' + work.end_date}
+                                        td.rightSide
+                                            case !!work.title || !!work.position
+                                                when true
+                                                    h2 #{(work.title || '') + (work.title && work.position ? ', ' : '') + (work.position || '')}
+                                            case !!work.description
+                                                when true
+                                                    span #{work.description}
+                case !!data.educations && !!data.educations.length
+                    when true
+                        table
+                            thead
+                                th.sub-heading EDUCATION
+                            tbody
+                                each edu in data.educations
+                                    tr
+                                        td.leftSide
+                                            case !!edu.school || !!edu.city
+                                                when true
+                                                    h2 #{(edu.school || '') + (edu.school && edu.city ? ', ' : '') + (edu.city || '')}
+                                            case !!edu.start_date
+                                                when true
+                                                    span #{edu.start_date}
+                                            case !!edu.start_date
+                                                when true
+                                                    span #{' > ' + edu.end_date}
+                                        td.rightSide
+                                            case !!edu.degree || !!edu.position
+                                                when true
+                                                    h2 #{(edu.degree || '') + (edu.degree && edu.position ? ', ' : '') + (edu.position || '')}
+                                            case !!edu.description
+                                                when true
+                                                    span #{edu.description}
