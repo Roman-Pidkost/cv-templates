@@ -1,0 +1,83 @@
+.svg-icon {
+    width: 1em;
+    height: 1em;
+}
+
+.svg-icon path,
+.svg-icon polygon,
+.svg-icon rect {
+    fill: #3d65be;
+}
+
+.svg-icon circle {
+    stroke: #3d65be;
+    stroke-width: 1;
+}
+
+.header {
+    padding: 0.7cm 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header__contacts {
+    width: 30%;
+    font-size: 10px;
+}
+.header__contacts_item {
+    display: flex;
+    justify-content: flex-end;
+    padding: 8px 0 0;
+}
+
+.header__contacts_icon {
+    padding-left: 10px;
+    font-size: 1.3em;
+}
+
+.section_header {
+    border-top: solid 1px #3d65be;
+    color: #3d65be;
+    font-size: 14px;
+    text-align: center;
+    padding: 2px 0;
+    border-bottom: solid 1px #3d65be;
+}
+
+.skills {
+    padding: 12px 0 20px;
+}
+
+.skills__item {
+    padding: 2px 4px;
+    margin: 4px;
+    background-color: #3d65be;
+    border-radius: 2px;
+    color: white;
+}
+
+.work {
+    padding: 10px 0;
+}
+
+.work div {
+    padding: 1.5px 0;
+}
+
+.work__title {
+    font-weight: bold;
+}
+
+.work__title, .work__employer {
+    font-size: 14px;
+}
+
+.work__info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 9px;
+}
+
+.work__info span {
+    color: #888;
+}

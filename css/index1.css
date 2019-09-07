@@ -1,0 +1,55 @@
+.header {
+    padding: .7cm 0 1cm;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.avatar {
+    border-radius: 50%;
+    height: 2.7cm;
+    width: 2.7cm;
+}
+
+.full-name {
+    margin: .3cm 0;
+}
+/*changes by yura*/
+.contacts-row{
+    padding: 5px;
+    text-align: center;
+}
+.sub-heading{
+    padding-right: 75px;
+    font-size: 26px;
+    text-align: left;
+    font-weight: normal;
+    margin-left: -3px;
+}
+table{
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+}
+tr{
+    display:flex;
+    /*align-items: center;*/
+    margin-bottom: 4%;
+}
+h2{
+    font-size: 13px;
+}
+caption{
+    margin-bottom: 1%;
+}
+.leftSide{
+    width: 30%;
+    min-height: 70px;
+}
+.rightSide{
+    width: 70%;
+    min-height: 70px;
+}
+
